@@ -1,0 +1,20 @@
+#Runs the cloud SDK 
+#separate from docker-compose.yml
+
+#version of docker compose syntax we're using
+version: '3.9'
+
+#Services we need to define inside our Docker compose file
+services:
+  gcloud: ##<--- first service
+    image: google/cloud-sdk:408.0.0-slim
+    volumes: ##<-- maps volumes from Coud SDK container to local machine
+      - gcp-creds:/creds ##<-- store google cloud credentials
+      - .:/app  ##<-- Mapping from our local directory to the `/app` directory on the container. Makes all project files accessible.
+    working_dir: /app
+    environment:
+      - CLOUDSDK_CONFIG=/creds ##<--- Tells CloudSDK to put config in `/creds` directory
+
+
+volumes:
+  gcp-creds:

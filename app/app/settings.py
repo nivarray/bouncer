@@ -123,7 +123,7 @@ LOGGING = {
             'class': 'logging.StreamHandler',
         },
     },
-    'roots':{
+    'root':{
         'handlers': ['console'],
         'level': 'DEBUG',
     }

@@ -1,8 +1,8 @@
-#used to run the emulator
 #!/bin/sh
+#used to run the emulator
 
+set -e #if any commands fail, immediately stops executing bash script
 
-set -e 
 #Checks if DATASTORE_PROJECT_ID is not empty, otherwise it'll print an exit message
 if [[ -z "${DATASTORE_PROJECT_ID}" ]]; then
     echo "Missing DATASTORE_PROJECT_ID environment variable" >&2

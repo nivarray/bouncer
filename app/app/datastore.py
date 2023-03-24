@@ -34,6 +34,8 @@ class NDBMiddleware:
 
         return response
 
+#To disable default database behavior that Django has when tests run. 
+#We are using Datastore instead of the default Django database.
 class TestRunner(DiscoverRunner):
     """A test suite runner that uses Datastore."""
 

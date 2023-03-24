@@ -1,4 +1,4 @@
-FROM google/cloud-sdk:341.0.0-alpine
+FROM google/cloud-sdk:423.0.0-alpine
 
 COPY ./run.sh /scripts/run.sh
 RUN chmod +x /scripts/*
